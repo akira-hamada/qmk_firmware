@@ -26,9 +26,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MANUFACTURER akira hamada
 #define PRODUCT      ginkgo
 
+/* This is default. But set explicitly */
+#define MASTER_LEFT
+
 /* key matrix size */
-#define MATRIX_ROWS 2
-#define MATRIX_COLS 3
+/* 
+   キーマトリクスの行数、列数を指定する
+   行数については、両方それぞれにファームウェアを置くので片方ずつの行数の5で良さそうに思うが
+   2倍にする必要がある。理由: https://www.reddit.com/r/olkb/comments/829ubq/rows_and_columns_of_split_using_2_pro_micros/
+*/
+#define MATRIX_ROWS 10 /* 5*2=10 */
+#define MATRIX_COLS 7
 
 /*
  * Keyboard Matrix Assignments
@@ -40,8 +48,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_ROW_PINS { D0, D5 }
-#define MATRIX_COL_PINS { F1, F0, B0 }
+/* Specify Port number, not name on board. ref: https://cdn.sparkfun.com/datasheets/Dev/Arduino/Boards/ProMicro16MHzv1.pdf */
+#define MATRIX_ROW_PINS { D4, C6, D7, E6, B4 }
+/* printed on Pro Micro as 4, 5, 6, 7, 8 */
+#define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2 }
+/* printed on Pro Micro as A3, A2, A1, A0, 15, 14, 16  */
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
@@ -50,7 +61,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
  */
-#define SOFT_SERIAL_PIN D0  // or D1, D2, D3, E6
+#define SOFT_SERIAL_PIN D2
+/* printed on Pro Micro as RX1 */
 
 //#define LED_NUM_LOCK_PIN B0
 //#define LED_CAPS_LOCK_PIN B1
