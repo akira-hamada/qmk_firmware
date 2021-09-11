@@ -57,6 +57,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
+/*
+ * 回路図と違い何故かpcbの段階でダイオードの向きが反対になってるので
+ * ROW2COLにしている
+ */
 #define DIODE_DIRECTION ROW2COL
 
 /*
