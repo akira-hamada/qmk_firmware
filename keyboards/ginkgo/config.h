@@ -37,7 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
    2倍にする必要がある。理由: https://www.reddit.com/r/olkb/comments/829ubq/rows_and_columns_of_split_using_2_pro_micros/
 */
 #define MATRIX_ROWS 10 /* 5*2=10 */
-#define MATRIX_COLS 7
+#define MATRIX_COLS 8
 
 /*
  * Keyboard Matrix Assignments
@@ -52,8 +52,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Specify Port number, not name on board. ref: https://cdn.sparkfun.com/datasheets/Dev/Arduino/Boards/ProMicro16MHzv1.pdf */
 #define MATRIX_ROW_PINS { D4, C6, D7, E6, B4 }
 /* printed on Pro Micro as 4, 5, 6, 7, 8 */
-#define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2 }
-/* printed on Pro Micro as A3, A2, A1, A0, 15, 14, 16  */
+#define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2, B6 }
+/* printed on Pro Micro as A3, A2, A1, A0, 15, 14, 16, 10 */
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
@@ -62,6 +62,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * ROW2COLにしている
  */
 #define DIODE_DIRECTION ROW2COL
+// #define DIODE_DIRECTION COL2ROW
 
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
